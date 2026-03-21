@@ -1,0 +1,175 @@
+---
+layout: base.html
+title: Projects
+pageCss:
+  - /public/assets/css/projects.css
+  - /public/assets/css/flutter_carousel.css
+pageJs:
+  - /public/assets/js/projects.js
+  - /public/assets/js/flutter_carousel.js
+---
+
+<!-- PROGRESS DOTS -->
+<div class="progress-bar" id="progressBar">
+    <div class="progress-dot active" data-index="0"></div>
+    <div class="progress-dot" data-index="1"></div>
+    <div class="progress-dot" data-index="2"></div>
+    <div class="progress-dot" data-index="3"></div>
+    <div class="progress-dot" data-index="4"></div>
+</div>
+<!-- PROJECT 1 -->
+<section class="project-section" data-num="01" data-index="0">
+    <div class="project-content">
+        <p class="project-tag">Mobile App</p>
+        <h2 class="project-title">
+            Workout
+            <br>
+            <em>Tracker</em>
+        </h2>
+        <p class="project-desc">
+            A Flutter fitness app to log sets, reps, and weight for fully custom
+            exercises — with bodyweight tracking and graphs to visualize your
+            progress over time.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Dart</span>
+            <span class="tech-pill">SQLite</span>
+            <span class="tech-pill">fl_chart</span>
+            <span class="tech-pill">Mobile</span>
+        </div>
+        <!-- carousel --->
+        <div id="carousel-container">
+            <div class="stage">
+                <div class="carousel-track" id="track"></div>
+                <div class="content">
+                    <div class="nav">
+                        <button onclick="move(-1)">❮</button>
+                        <button onclick="move(1)">❯</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end carousel --->
+    </div>
+    <div class="scroll-hint">
+        <div class="line"></div>
+        scroll
+    </div>
+</section>
+<!-- PROJECT 2 -->
+<section class="project-section" data-num="02" data-index="1">
+    <div class="project-content">
+        <p class="project-tag">Desktop Widget</p>
+        <h2 class="project-title">
+            Phone <em>&</em>
+            <br>
+            Bridge
+        </h2>
+        <p class="project-desc">
+            A Quickshell widget that mirrors Android battery level and notifications
+            directly onto your Linux desktop over Bluetooth — no internet, no cables.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-pill">Quickshell</span>
+            <span class="tech-pill">Go</span>
+            <span class="tech-pill">Android Studio</span>
+            <span class="tech-pill">Bluetooth</span>
+            <span class="tech-pill">Linux</span>
+        </div>
+        <div class="project-links">
+            <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
+            <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
+        </div>
+    </div>
+</section>
+<!-- PROJECT 3 -->
+<section class="project-section" data-num="03" data-index="2">
+    <div class="project-content">
+        <p class="project-tag">Simulation</p>
+        <h2 class="project-title">
+            Game
+            <br>
+            <em>of Life</em>
+        </h2>
+        <p class="project-desc">
+            An implementation of Conway's Game of Life built in C++ with SDL2 —
+            a zero-player cellular automaton rendered in real time with interactive
+            cell toggling and simulation controls.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-pill">C++</span>
+            <span class="tech-pill">SDL2</span>
+            <span class="tech-pill">Simulation</span>
+        </div>
+        <div class="project-links">
+            <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
+            <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
+        </div>
+    </div>
+</section>
+<!-- PROJECT 4 -->
+<section class="project-section" data-num="04" data-index="3">
+    <div class="project-content">
+        <p class="project-tag">Computer Vision/Image Processing</p>
+        <h2 class="project-title">
+            ASCII
+            <br>
+            <em>Filter</em>
+        </h2>
+        <p class="project-desc">ascii filter for images, video or webcam</p>
+        <div class="tech-stack">
+            <span class="tech-pill">C++</span>
+            <span class="tech-pill">OpenCV</span>
+        </div>
+        <div class="project-links">
+            <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
+            <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
+        </div>
+    </div>
+</section>
+<!-- PROJECT 5 -->
+<section class="project-section" data-num="05" data-index="4">
+    <div class="project-content">
+        <p class="project-tag">Automation</p>
+        <h2 class="project-title">
+            Instagram
+            <br>
+            <em>Rotator</em>
+        </h2>
+        <p class="project-desc">
+            A Python script that automatically rotates your Instagram profile picture
+            at a set time interval — no manual uploads, just drop in your images and
+            let it run.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Instagram API</span>
+            <span class="tech-pill">Automation</span>
+        </div>
+        <div class="project-links">
+            <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
+        </div>
+    </div>
+</section>
+<!-- PROJECT 6 -->
+<section class="project-section" data-num="06" data-index="5">
+    <div class="project-content">
+        <p class="project-tag">Your next project</p>
+        <h2 class="project-title">
+            Coming
+            <br>
+            <em>Soon</em>
+        </h2>
+        <p class="project-desc">
+            Something new is in the works. Check back soon or follow along on
+            GitHub to see what's being built next.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-pill">???</span>
+        </div>
+        <div class="project-links">
+            <a href="/contact" class="btn btn-primary">Get in touch <span class="arrow">↗</span></a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,124 @@
+---
+layout: base.html
+title: Profile
+pageCss:
+  - /public/assets/css/profile.css
+---
+
+<div class="profile-wrapper">
+    <!-- LEFT COL -->
+    <div class="profile-left">
+        <div class="profile-avatar">
+            <img src="/public/assets/img/avatar.jpg"
+                 alt="Camille Petrou"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="avatar-fallback">CP</div>
+        </div>
+        <div class="profile-meta">
+            <span class="meta-pill">DEC Informatique</span>
+            <span class="meta-pill">Cégep</span>
+            <span class="meta-pill">La Pocatière</span>
+        </div>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="profile-right">
+
+        <div class="profile-intro">
+            <p class="profile-label" data-lang="en">About me</p>
+            <p class="profile-label" data-lang="fr">À propos</p>
+            <h1 class="profile-name">
+                Camille
+                <br>
+                <em>Petrou</em>
+            </h1>
+            <p class="profile-bio" data-lang="en">
+                Student in computer science at Cégep, passionate about building things
+                that live close to the metal — from mobile apps to Linux desktop tools.
+                I gravitate toward backend systems, low-level programming, and anything
+                that requires figuring out how things actually work under the hood.
+            </p>
+            <p class="profile-bio" data-lang="fr">
+                Étudiante en informatique au Cégep, passionnée par la création de choses
+                proches du métal — des applications mobiles aux outils de bureau Linux.
+                Je m'oriente vers les systèmes backend, la programmation bas niveau, et tout
+                ce qui demande de comprendre comment les choses fonctionnent vraiment.
+            </p>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="profile-section">
+            <p class="profile-label" data-lang="en">Skills</p>
+            <p class="profile-label" data-lang="fr">Compétences</p>
+            <div class="skills-grid">
+
+                <div class="skill-group">
+                    <p class="skill-group-title" data-lang="en">Languages</p>
+                    <p class="skill-group-title" data-lang="fr">Langages</p>
+                    <div class="skill-list">
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Go</span>
+                        <span class="skill-pill">Dart</span>
+                        <span class="skill-pill">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <p class="skill-group-title" data-lang="en">Tools & Frameworks</p>
+                    <p class="skill-group-title" data-lang="fr">Outils & Frameworks</p>
+                    <div class="skill-list">
+                        <span class="skill-pill">Arduino</span>
+                        <span class="skill-pill">Flutter</span>
+                        <span class="skill-pill">SDL2</span>
+                        <span class="skill-pill">SQLite</span>
+                        <span class="skill-pill">Android Studio</span>
+                        <span class="skill-pill">Django</span>
+                        <span class="skill-pill">Eleventy</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <p class="skill-group-title" data-lang="en">Environment</p>
+                    <p class="skill-group-title" data-lang="fr">Environnement</p>
+                    <div class="skill-list">
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">Bash</span>
+                        <span class="skill-pill">Git</span>
+                        <span class="skill-pill">NeoVim</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="profile-section">
+            <p class="profile-label" data-lang="en">Education</p>
+            <p class="profile-label" data-lang="fr">Formation</p>
+
+            <div class="edu-card" data-tilt>
+                <div class="edu-left">
+                    <p class="edu-degree">DEC Informatique</p>
+                    <p class="edu-school">Cégep — La Pocatière</p>
+                </div>
+                <div class="edu-right">
+                    <span class="edu-year" data-lang="en">2023 — Present</span>
+                    <span class="edu-year" data-lang="fr">2023 — Présent</span>
+                </div>
+            </div>
+
+            <div class="edu-card" data-tilt>
+                <div class="edu-left">
+                    <p class="edu-degree">BAC STI2D</p>
+                    <p class="edu-school">Lycée polyvalent Stella — Saint-Leu, Réunion</p>
+                </div>
+                <div class="edu-right">
+                    <span class="edu-year" data-lang="en">2020 — 2023</span>
+                    <span class="edu-year" data-lang="fr">2020 — 2023</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
