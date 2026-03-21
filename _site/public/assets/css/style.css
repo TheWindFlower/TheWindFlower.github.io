@@ -1,0 +1,103 @@
+:root {
+    --mc-bg: #141820;
+    --mc-surface: #191d26;
+    --mc-border: #262d3d;
+    --mc-gold: #f5a623;
+    --mc-gold-dim: #b87012;
+    --mc-muted: #6b7280;
+    --mc-text: #ede8df;
+    --mc-overlay: rgba(10, 12, 18, 0.97);
+    --mc-radius: 12px;
+}
+
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+/* ── Header ──────────────────────────────── */
+
+
+.site-header {
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+}
+
+.site-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: .1em;
+    color: var(--mc-gold);
+    flex: 1;
+    text-align: center;
+}
+
+.site-header #langToggle {
+    align-self: flex-end;
+    margin-right: 40px;
+    width: 105px;
+    text-align: right;
+}
+
+/* Balancing spacer on the left */
+.site-header::before {
+    content: '';
+    width: 80px; /* same as #langToggle width */
+    margin-left: 40px; /* same as margin-right */
+    flex-shrink: 0;
+}
+
+
+/* ── Nav ──────────────────────────────────── */
+.site-nav {
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0 20px;
+}
+
+.site-nav a {
+    color: var(--mc-muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 999px;
+    transition: color .2s, background .2s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: var(--mc-bg);
+    background: var(--mc-gold);
+}
+
+/* ── Main content ────────────────────────── */
+.site-main {}
+
+/* ── Footer ───────────────────────────────── */
+.site-footer {
+    padding: 24px 0px;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--mc-muted);
+    line-height: 1.8;
+}
+
+.site-footer .footer-highlight {
+    color: var(--mc-gold);
+    font-weight: 600;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>PortFolio</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+              rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+              rel="stylesheet">
+        <link rel="stylesheet" href="/public/assets/css/rawcss.css">
+        <link rel="stylesheet" href="/public/assets/css/style.css">
+        <link rel="stylesheet" href="/public/assets/css/langButton.css">
+        <script src="/public/assets/js/rawcss.js" defer></script>
+        <script src="/public/assets/js/lang.js" defer></script>
+        
+            <link rel="stylesheet" href="/public/assets/css/profile.css" />
+        
+        
+    </head>
+    <body>
+        <div id="cursor-dot"></div>
+        <div id="cursor-ring"></div>
+        <!-- Aurora BG -->
+        <div class="aurora" aria-hidden="true">
+            <div class="aurora-blob"></div>
+            <div class="aurora-blob"></div>
+            <div class="aurora-blob"></div>
+        </div>
+        <div class="noise" aria-hidden="true"></div>
+        <header class="header site-header">
+            <h1 id="scramble-text">PortFolio</h1>
+            <div class="lang-toggle" id="langToggle">
+                <button data-target="en" class="lang-button active">EN</button>
+                <button data-target="fr" class="lang-button">FR</button>
+            </div>
+        </header>
+        <div class="divider"></div>
+        <!---- navbar --->
+        <nav class="menu site-nav">
+            <a href="/"
+               data-lang="en"
+               class="">Home</a>
+            <a href="/"
+               data-lang="fr"
+               class="">Accueil</a>
+            <a href="/projects/"
+               data-lang="en"
+               class="">My Projects</a>
+            <a href="/projects/"
+               data-lang="fr"
+               class="">Mes Projets</a>
+            <a href="/profile/"
+               data-lang="en"
+               class="active">My Profile</a>
+            <a href="/profile/"
+               data-lang="fr"
+               class="active">Mon Profil</a>
+            <a href="/resume/"
+               data-lang="en"
+               class="">My Resume</a>
+            <a href="/resume/"
+               data-lang="fr"
+               class="">Mon CV</a>
+            <a href="/contact/"
+               data-lang="en"
+               class="">Contact me</a>
+            <a href="/contact/"
+               data-lang="fr"
+               class="">Me Contacter</a>
+        </nav>
+        <!--- content --->
+        <main class="content site-main">
+            
+<div class="profile-wrapper">
+    <!-- LEFT COL -->
+    <div class="profile-left">
+        <div class="profile-avatar">
+            <img src="/public/assets/img/avatar.jpg"
+                 alt="Camille Petrou"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="avatar-fallback">CP</div>
+        </div>
+        <div class="profile-meta">
+            <span class="meta-pill">DEC Informatique</span>
+            <span class="meta-pill">Cégep</span>
+            <span class="meta-pill">La Pocatière</span>
+        </div>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="profile-right">
+
+        <div class="profile-intro">
+            <p class="profile-label" data-lang="en">About me</p>
+            <p class="profile-label" data-lang="fr">À propos</p>
+            <h1 class="profile-name">
+                Camille
+                <br>
+                <em>Petrou</em>
+            </h1>
+            <p class="profile-bio" data-lang="en">
+                Student in computer science at Cégep, passionate about building things
+                that live close to the metal — from mobile apps to Linux desktop tools.
+                I gravitate toward backend systems, low-level programming, and anything
+                that requires figuring out how things actually work under the hood.
+            </p>
+            <p class="profile-bio" data-lang="fr">
+                Étudiante en informatique au Cégep, passionnée par la création de choses
+                proches du métal — des applications mobiles aux outils de bureau Linux.
+                Je m'oriente vers les systèmes backend, la programmation bas niveau, et tout
+                ce qui demande de comprendre comment les choses fonctionnent vraiment.
+            </p>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="profile-section">
+            <p class="profile-label" data-lang="en">Skills</p>
+            <p class="profile-label" data-lang="fr">Compétences</p>
+            <div class="skills-grid">
+
+                <div class="skill-group">
+                    <p class="skill-group-title" data-lang="en">Languages</p>
+                    <p class="skill-group-title" data-lang="fr">Langages</p>
+                    <div class="skill-list">
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Go</span>
+                        <span class="skill-pill">Dart</span>
+                        <span class="skill-pill">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <p class="skill-group-title" data-lang="en">Tools & Frameworks</p>
+                    <p class="skill-group-title" data-lang="fr">Outils & Frameworks</p>
+                    <div class="skill-list">
+                        <span class="skill-pill">Arduino</span>
+                        <span class="skill-pill">Flutter</span>
+                        <span class="skill-pill">SDL2</span>
+                        <span class="skill-pill">SQLite</span>
+                        <span class="skill-pill">Android Studio</span>
+                        <span class="skill-pill">Django</span>
+                        <span class="skill-pill">Eleventy</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <p class="skill-group-title" data-lang="en">Environment</p>
+                    <p class="skill-group-title" data-lang="fr">Environnement</p>
+                    <div class="skill-list">
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">Bash</span>
+                        <span class="skill-pill">Git</span>
+                        <span class="skill-pill">NeoVim</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="profile-section">
+            <p class="profile-label" data-lang="en">Education</p>
+            <p class="profile-label" data-lang="fr">Formation</p>
+
+            <div class="edu-card" data-tilt>
+                <div class="edu-left">
+                    <p class="edu-degree">DEC Informatique</p>
+                    <p class="edu-school">Cégep — La Pocatière</p>
+                </div>
+                <div class="edu-right">
+                    <span class="edu-year" data-lang="en">2023 — Present</span>
+                    <span class="edu-year" data-lang="fr">2023 — Présent</span>
+                </div>
+            </div>
+
+            <div class="edu-card" data-tilt>
+                <div class="edu-left">
+                    <p class="edu-degree">BAC STI2D</p>
+                    <p class="edu-school">Lycée polyvalent Stella — Saint-Leu, Réunion</p>
+                </div>
+                <div class="edu-right">
+                    <span class="edu-year" data-lang="en">2020 — 2023</span>
+                    <span class="edu-year" data-lang="fr">2020 — 2023</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        </main>
+        <div class="divider"></div>
+        <footer class="site-footer">
+            <p class="footer-highlight">Portfolio</p>
+            <p>La Pocatière, Québec</p>
+            <p>camille.petrou@gmail.com</p>
+            <p>© 2026 Camille Petrou</p>
+        </footer>
+    </body>
+</html>
