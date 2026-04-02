@@ -1,1 +1,48 @@
-resume
+---
+layout: base.html
+title: Resume
+pageCss:
+  - /public/assets/css/resume.css
+---
+
+<div class="resume-wrapper">
+
+  <div class="resume-header">
+    <div class="resume-header-left">
+      <p class="resume-label" >Curriculum Vitae</p>
+      <h1 class="resume-title">
+        <span data-lang="en">My<br><em>Resume</em></span>
+        <span data-lang="fr">Mon<br><em>CV</em></span>
+      </h1>
+    </div>
+    <div class="resume-header-right">
+      <a href="/public/assets/docs/resume.pdf" download class="btn-download">
+        <span data-lang="en">Download PDF</span>
+        <span data-lang="fr">Télécharger PDF</span>
+        <span class="btn-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="resume-viewer">
+    <iframe
+      src="/public/assets/docs/resume.pdf"
+      type="application/pdf"
+      width="100%"
+      height="100%"
+      title="Resume PDF">
+    </iframe>
+
+    <!-- Fallback if browser can't display PDF -->
+    <div class="resume-fallback">
+      <p data-lang="en">Your browser can't display PDFs inline.</p>
+      <p data-lang="fr">Votre navigateur ne peut pas afficher le PDF.</p>
+      <a href="/public/assets/docs/resume.pdf" download class="btn-download">
+        <span data-lang="en">Download PDF instead</span>
+        <span data-lang="fr">Télécharger le PDF</span>
+        <span class="btn-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+
+</div>

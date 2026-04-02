@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── LAYOUT ── */
+.resume-wrapper {
+    min-height: 100vh;
+    background: #0e0e0e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 6rem 4rem;
+    gap: 3rem;
+}
+
+/* ── HEADER ── */
+.resume-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.resume-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.resume-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.resume-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.resume-title em {
+    font-style: italic;
+    opacity: 0.4;
+}
+
+/* ── DOWNLOAD BUTTON ── */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.btn-download:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-arrow {
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.btn-download:hover .btn-arrow {
+    transform: translateY(3px);
+}
+
+/* ── PDF VIEWER ── */
+.resume-viewer {
+    flex: 1;
+    min-height: 80vh;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: #1a1a1a;
+}
+
+.resume-viewer iframe {
+    display: block;
+    border: none;
+    min-height: 80vh;
+}
+
+/* Fallback */
+.resume-fallback {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 4rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .resume-wrapper {
+        padding: 7rem 1.5rem 3rem;
+    }
+
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .resume-viewer {
+        min-height: 60vh;
+    }
+
+    .resume-viewer iframe {
+        min-height: 60vh;
+    }
+}

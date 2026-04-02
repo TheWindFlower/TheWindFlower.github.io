@@ -3,6 +3,10 @@
     const dots = document.querySelectorAll(".progress-dot");
     let isScrolling = false;
 
+
+    const header = document.querySelector("header");
+    header.style.display = "none";
+
     const footer = document.querySelector("footer");
     footer.style.display = "none";
 
@@ -26,6 +30,8 @@
         { threshold: 0.5 },
     );
     sections.forEach((s) => observer.observe(s));
+
+    window.scrollTo({ top: sections[0].offsetTop, behavior: 'instant' });
 
     // Click a dot to jump to its section
     dots.forEach((dot) => {

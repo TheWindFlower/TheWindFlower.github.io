@@ -31,5 +31,4 @@ buttons.forEach((btn) => {
 // Restore saved preference on load
 const saved = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
 setLang(saved);
-console.log(buttons);
 

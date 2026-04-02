@@ -51,3 +51,7 @@
 [data-lang].visible {
     display: block;
 }
+
+[data-lang].visible.profile-label, [data-lang].visible.contact-label {
+    display: flex;
+}

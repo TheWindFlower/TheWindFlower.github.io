@@ -71,6 +71,12 @@
             <a href="/contact/"
                data-lang="fr"
                class="{% if page.url == '/contact/' %}active{% endif %}">Me Contacter</a>
+            {% if page.url == '/projects/' %}
+                <div class="lang-toggle" id="langToggle">
+                    <button data-target="en" class="lang-button active">EN</button>
+                    <button data-target="fr" class="lang-button">FR</button>
+                </div>
+            {% endif %}
         </nav>
         <!--- content --->
         <main class="content site-main">
