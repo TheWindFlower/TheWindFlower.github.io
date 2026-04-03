@@ -15,6 +15,10 @@
         <script src="/public/assets/js/rawcss.js" defer></script>
         <script src="/public/assets/js/lang.js" defer></script>
         
+            <link rel="stylesheet" href="/public/assets/css/index.css" />
+        
+        
+            <script src="/public/assets/js/index.js" defer></script>       <!-- page-specific, only if defined -->
         
     </head>
     <body>
@@ -72,12 +76,39 @@
         <!--- content --->
         <main class="content site-main">
             
+
 <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track" id="marquee">
         <!-- populated by JS -->
     </div>
 </div>
-<h1>WIP</h1>
+
+
+<div class="terminal-wrapper">
+  <div class="terminal-window">
+
+    <div class="terminal-bar">
+      <span class="terminal-dot red"></span>
+      <span class="terminal-dot yellow"></span>
+      <span class="terminal-dot green"></span>
+      <span class="terminal-title">camille@portfolio ~ </span>
+    </div>
+
+    <div class="terminal-body" id="terminalBody">
+      <div class="terminal-line" id="terminalLines"></div>
+      <span class="terminal-cursor" id="terminalCursor">▋</span>
+    </div>
+
+  </div>
+
+  <div class="terminal-cta" id="terminalCta">
+    <a href="/projects/" class="cta-btn" data-lang="en">View Projects <span>→</span></a>
+    <a href="/projects/" class="cta-btn" data-lang="fr">Voir les Projets <span>→</span></a>
+    <a href="/contact/" class="cta-ghost" data-lang="en">Contact me</a>
+    <a href="/contact/" class="cta-ghost" data-lang="fr">Me contacter</a>
+  </div>
+
+</div>
 
         </main>
         <div class="divider"></div>
