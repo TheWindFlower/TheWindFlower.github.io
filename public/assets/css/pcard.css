@@ -1,0 +1,267 @@
+#pcard-section {
+    display: block;
+    margin-top: 20px;
+    --pcard-gap: 1.25rem;
+    --pcard-speed: 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --pcard-closed: 5rem;
+    --pcard-open: 30rem;
+    --pcard-accent: #ff6b35;
+}
+
+
+.pcard-nav-btn:hover {
+    background: var(--pcard-accent);
+}
+
+.pcard-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.pcard-slider {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.pcard-track {
+    display: flex;
+    gap: var(--pcard-gap);
+    align-items: flex-start;
+    justify-content: center;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.pcard-track::-webkit-scrollbar {
+    display: none;
+}
+
+.pcard {
+    position: relative;
+    flex: 0 0 var(--pcard-closed);
+    height: 24rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex-basis var(--pcard-speed), transform var(--pcard-speed);
+}
+
+.pcard[active] {
+    flex-basis: var(--pcard-open);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+}
+
+.pcard__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75) saturate(75%);
+    transition: filter 0.3s, transform var(--pcard-speed);
+}
+
+.pcard:hover .pcard__bg {
+    filter: brightness(0.9) saturate(100%);
+    transform: scale(1.06);
+}
+
+.pcard__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0;
+    background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 2;
+}
+
+.pcard__title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.35rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.pcard__thumb,
+.pcard__desc,
+.pcard__btn {
+    display: none;
+}
+
+.pcard[active] .pcard__content {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    gap: 1.1rem;
+}
+
+.pcard[active] .pcard__title {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 2.4rem;
+}
+
+.pcard[active] .pcard__thumb,
+.pcard[active] .pcard__desc,
+.pcard[active] .pcard__btn {
+    display: block;
+}
+
+.pcard__thumb {
+    width: 133px;
+    height: 269px;
+    border-radius: 0.45rem;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pcard__desc {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 16rem;
+}
+
+.pcard__btn {
+    padding: 0.55rem 1.3rem;
+    border: none;
+    border-radius: 9999px;
+    background: var(--pcard-accent);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pcard__btn:hover {
+    background: #ff824f;
+}
+
+.pcard-dots {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.pcard-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pcard-dot.active {
+    background: var(--pcard-accent);
+    transform: scale(1.2);
+}
+
+@media (max-width: 767px) {
+    #pcard-section {
+        --pcard-closed: 100%;
+        --pcard-open: 100%;
+        --pcard-gap: 0.8rem;
+    }
+
+    .pcard-head {
+        padding: 30px 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .pcard-slider {
+        padding: 0 15px;
+    }
+
+    .pcard-track {
+        flex-direction: column;
+        scroll-snap-type: y mandatory;
+        gap: 0.8rem;
+        padding-bottom: 20px;
+    }
+
+    .pcard {
+        height: auto;
+        min-height: 80px;
+        flex: 0 0 auto;
+        width: 100%;
+        scroll-snap-align: start;
+    }
+
+    .pcard[active] {
+        min-height: 300px;
+        transform: none;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .pcard__content {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 1rem;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .pcard__title {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1.2rem;
+        margin-right: auto;
+    }
+
+    .pcard[active] .pcard__content {
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+
+    .pcard[active] .pcard__title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    .pcard[active] .pcard__thumb {
+        width: 200px;
+        height: 267px;
+        border-radius: 0.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .pcard[active] .pcard__desc {
+        font-size: 0.95rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .pcard[active] .pcard__btn {
+        align-self: center;
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem;
+    }
+
+    .pcard-dots {
+        display: none;
+    }
+
+    .pcard-controls {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 15px 20px;
+    }
+
+    .pcard-nav-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.2rem;
+    }
+}

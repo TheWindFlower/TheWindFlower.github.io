@@ -4,9 +4,16 @@ title: Projects
 pageCss:
   - /public/assets/css/projects.css
   - /public/assets/css/flutter_carousel.css
+  - /public/assets/css/curved_carousel.css
+  - /public/assets/css/pcard.css
+  - /public/assets/css/mxrn.css
 pageJs:
   - /public/assets/js/projects.js
   - /public/assets/js/flutter_carousel.js
+  - /public/assets/js/curved_carousel.js
+  - /public/assets/js/pcard.js
+  - /public/assets/js/mxrn.js
+  - https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
 ---
 
 <!-- PROGRESS DOTS -->
@@ -20,18 +27,19 @@ pageJs:
 <!-- PROJECT 1 -->
 <section class="project-section" data-num="01" data-index="0">
     <div class="project-content">
-        <p class="project-tag">Mobile App</p>
-        <h2 class="project-title">
+        <p data-lang="en" class="project-tag">Mobile App</p>
+        <p data-lang="fr" class="project-tag">Application mobile</p>
+        <h2 data-lang="en" class="project-title">
             Workout
             <br>
             <em>Tracker</em>
         </h2>
-        <p class="project-desc">
+        <p data-lang="en" class="project-desc">
             A Flutter fitness app to log sets, reps, and weight for fully custom
             exercises, with bodyweight tracking and graphs to visualize your
             progress over time.
         </p>
-        <div class="tech-stack">
+        <div data-lang="en" class="tech-stack">
             <span class="tech-pill">Flutter</span>
             <span class="tech-pill">Dart</span>
             <span class="tech-pill">SQLite</span>
@@ -60,13 +68,13 @@ pageJs:
 <!-- PROJECT 2 -->
 <section class="project-section" data-num="02" data-index="1">
     <div class="project-content">
-        <p class="project-tag">Desktop Widget</p>
+        <p data-lang="en" class="project-tag">Desktop Widget</p>
         <h2 class="project-title">
             Phone <em>&</em>
             <br>
             Bridge
         </h2>
-        <p class="project-desc">
+        <p data-lang="en" class="project-desc">
             A Quickshell widget that mirrors Android battery level and notifications
             directly onto a Linux desktop over Bluetooth. no internet, no cables.
         </p>
@@ -77,6 +85,72 @@ pageJs:
             <span class="tech-pill">Bluetooth</span>
             <span class="tech-pill">Linux</span>
         </div>
+        <!-- carousel --->
+        <section class="crsl-scene" id="curved-carousel">
+            <div class="crsl-a3d">
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1540968221243-29f5d70540bf?w=600&fit=crop"
+                         alt="Jelly 1">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1596135187959-562c650d98bc?w=600&fit=crop"
+                         alt="Jelly 2">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1628944682084-831f35256163?w=600&fit=crop"
+                         alt="Jelly 3">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1590013330451-3946e83e0392?w=600&fit=crop"
+                         alt="Jelly 4">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1590421959604-741d0eec0a2e?w=600&fit=crop"
+                         alt="Jelly 5">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1572613000712-eadc57acbecd?w=600&fit=crop"
+                         alt="Jelly 6">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1570097192570-4b49a6736f9f?w=600&fit=crop"
+                         alt="Jelly 7">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1620789550663-2b10e0080354?w=600&fit=crop"
+                         alt="Jelly 8">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1617775623669-20bff4ffaa5c?w=600&fit=crop"
+                         alt="Jelly 9">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1548600916-dc8492f8e845?w=600&fit=crop"
+                         alt="Jelly 10">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1573824969595-a76d4365a2e6?w=600&fit=crop"
+                         alt="Jelly 11">
+                </div>
+                <div class="crsl-img-container">
+                    <img class="crsl-card"
+                         src="https://images.unsplash.com/photo-1633936929709-59991b5fdd72?w=600&fit=crop"
+                         alt="Jelly 12">
+                </div>
+            </div>
+        </section>
+        <!-- end carousel --->
         <div class="project-links">
             <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
             <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
@@ -86,14 +160,14 @@ pageJs:
 <!-- PROJECT 3 -->
 <section class="project-section" data-num="03" data-index="2">
     <div class="project-content">
-        <p class="project-tag">Simulation</p>
+        <p data-lang="en" class="project-tag">Simulation</p>
         <h2 class="project-title">
             Game
             <br>
             <em>of Life</em>
         </h2>
         <p class="project-desc">
-            An implementation of Conway's Game of Life built in C++ with SDL2. 
+            An implementation of Conway's Game of Life built in C++ with SDL2.
             A zero-player cellular automaton rendered in real time with interactive
             cell toggling and simulation controls.
         </p>
@@ -102,6 +176,88 @@ pageJs:
             <span class="tech-pill">SDL2</span>
             <span class="tech-pill">Simulation</span>
         </div>
+        <section id="pcard-section">
+            <div class="pcard-slider">
+                <div class="pcard-track" id="pcard-track">
+                    <article class="pcard" active>
+                        <img class="pcard__bg"
+                             src="https://images.unsplash.com/photo-1540968221243-29f5d70540bf?w=600&fit=crop"
+                             alt="">
+                        <div class="pcard__content">
+                            <img class="pcard__thumb"
+                                 src="https://images.unsplash.com/photo-1596135187959-562c650d98bc?w=600&fit=crop"
+                                 alt="">
+                            <div>
+                                <h3 class="pcard__title">Designers</h3>
+                                <p class="pcard__desc">Tools that work like you do.</p>
+                                <button class="pcard__btn">Details</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="pcard">
+                        <img class="pcard__bg"
+                             src="https://images.unsplash.com/photo-1628944682084-831f35256163?w=600&fit=crop"
+                             alt="">
+                        <div class="pcard__content">
+                            <img class="pcard__thumb"
+                                 src="https://images.unsplash.com/photo-1590013330451-3946e83e0392?w=600&fit=crop"
+                                 alt="">
+                            <div>
+                                <h3 class="pcard__title">Marketers</h3>
+                                <p class="pcard__desc">Create faster, explore new possibilities.</p>
+                                <button class="pcard__btn">Details</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="pcard">
+                        <img class="pcard__bg"
+                             src="https://images.unsplash.com/photo-1590421959604-741d0eec0a2e?w=600&fit=crop"
+                             alt="">
+                        <div class="pcard__content">
+                            <img class="pcard__thumb"
+                                 src="https://images.unsplash.com/photo-1572613000712-eadc57acbecd?w=600&fit=crop"
+                                 alt="">
+                            <div>
+                                <h3 class="pcard__title">VFX filmmakers</h3>
+                                <p class="pcard__desc">From concept to cut, faster.</p>
+                                <button class="pcard__btn">Details</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="pcard">
+                        <img class="pcard__bg"
+                             src="https://images.unsplash.com/photo-1570097192570-4b49a6736f9f?w=600&fit=crop"
+                             alt="">
+                        <div class="pcard__content">
+                            <img class="pcard__thumb"
+                                 src="https://images.unsplash.com/photo-1620789550663-2b10e0080354?w=600&fit=crop"
+                                 alt="">
+                            <div>
+                                <h3 class="pcard__title">Content creators</h3>
+                                <p class="pcard__desc">Make scroll-stopping content, easily.</p>
+                                <button class="pcard__btn">Details</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="pcard">
+                        <img class="pcard__bg"
+                             src="https://images.unsplash.com/photo-1617775623669-20bff4ffaa5c?w=600&fit=crop"
+                             alt="">
+                        <div class="pcard__content">
+                            <img class="pcard__thumb"
+                                 src="https://images.unsplash.com/photo-1548600916-dc8492f8e845?w=600&fit=crop"
+                                 alt="">
+                            <div>
+                                <h3 class="pcard__title">Art directors</h3>
+                                <p class="pcard__desc">Creative control at every stage.</p>
+                                <button class="pcard__btn">Details</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="pcard-dots" id="pcard-dots"></div>
+        </section>
         <div class="project-links">
             <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
             <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
@@ -111,7 +267,7 @@ pageJs:
 <!-- PROJECT 4 -->
 <section class="project-section" data-num="04" data-index="3">
     <div class="project-content">
-        <p class="project-tag">Computer Vision/Image Processing</p>
+        <p data-lang="en" class="project-tag">Computer Vision/Image Processing</p>
         <h2 class="project-title">
             ASCII
             <br>
@@ -122,6 +278,18 @@ pageJs:
             <span class="tech-pill">C++</span>
             <span class="tech-pill">OpenCV</span>
         </div>
+        <section id="mxrn-section">
+            <div class="mxrn-container">
+                <div class="mxrn-carousel-container">
+                    <div class="mxrn-carousel" id="mxrn-carousel">
+                        <canvas id="mxrn-canvas"></canvas>
+                    </div>
+                    <button class="mxrn-nav-btn mxrn-prev" id="mxrn-prevBtn">◂</button>
+                    <button class="mxrn-nav-btn mxrn-next" id="mxrn-nextBtn">▸</button>
+                    <div class="mxrn-indicators" id="mxrn-indicators"></div>
+                </div>
+            </div>
+        </section>
         <div class="project-links">
             <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
             <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
@@ -131,7 +299,7 @@ pageJs:
 <!-- PROJECT 5 -->
 <section class="project-section" data-num="05" data-index="4">
     <div class="project-content">
-        <p class="project-tag">Automation</p>
+        <p data-lang="en" class="project-tag">Automation</p>
         <h2 class="project-title">
             Instagram
             <br>
@@ -148,7 +316,8 @@ pageJs:
             <span class="tech-pill">Automation</span>
         </div>
         <div class="project-links">
-            <a href="https://github.com/TheWindFlower/Instagram-Profile-Picture-Changer" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
+            <a href="https://github.com/TheWindFlower/Instagram-Profile-Picture-Changer"
+               class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
         </div>
     </div>
 </section>

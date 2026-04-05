@@ -52,6 +52,9 @@
     display: block;
 }
 
-[data-lang].visible.profile-label, [data-lang].visible.contact-label {
+[data-lang].visible.profile-label, 
+[data-lang].visible.contact-label,
+[data-lang].visible.project-tag
+{
     display: flex;
 }
