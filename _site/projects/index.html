@@ -9,13 +9,14 @@
         <link rel="stylesheet" href="/public/assets/css/style.css">
         <link rel="stylesheet" href="/public/assets/css/langButton.css">
         <script src="/public/assets/js/rawcss.js" defer></script>
-        <script src="/public/assets/js/lang.js" defer></script>
+        <script src="/public/assets/js/lang.js" type="module" defer></script>
         
             <link rel="stylesheet" href="/public/assets/css/projects.css" /><link rel="stylesheet" href="/public/assets/css/flutter_carousel.css" /><link rel="stylesheet" href="/public/assets/css/curved_carousel.css" /><link rel="stylesheet" href="/public/assets/css/pcard.css" /><link rel="stylesheet" href="/public/assets/css/mxrn.css" />
         
         
             <script src="/public/assets/js/projects.js" defer></script>       <!-- page-specific, only if defined --><script src="/public/assets/js/flutter_carousel.js" defer></script>       <!-- page-specific, only if defined --><script src="/public/assets/js/curved_carousel.js" defer></script>       <!-- page-specific, only if defined --><script src="/public/assets/js/pcard.js" defer></script>       <!-- page-specific, only if defined --><script src="/public/assets/js/mxrn.js" defer></script>       <!-- page-specific, only if defined --><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"" defer></script>       <!-- page-specific, only if defined -->
         
+        <link rel="icon" type="image/x-icon" href="/public/assets/img/favicon.svg">
     </head>
     <body>
         <div id="cursor-dot"></div>
@@ -95,10 +96,20 @@
             <br>
             <em>Tracker</em>
         </h2>
+        <h2 data-lang="fr" class="project-title">
+            suivi
+            <br>
+            <em>d'entraînement</em>
+        </h2>
         <p data-lang="en" class="project-desc">
             A Flutter fitness app to log sets, reps, and weight for fully custom
             exercises, with bodyweight tracking and graphs to visualize your
             progress over time.
+        </p>
+        <p data-lang="fr" class="project-desc">
+            Une application de fitness développée avec Flutter permettant d’enregistrer les séries,
+            les répétitions et les charges pour des exercices entièrement personnalisés,
+            avec un suivi du poids corporel et des graphiques pour visualiser votre progression au fil du temps.
         </p>
         <div data-lang="en" class="tech-stack">
             <span class="tech-pill">Flutter</span>
@@ -130,19 +141,25 @@
 <section class="project-section" data-num="02" data-index="1">
     <div class="project-content">
         <p data-lang="en" class="project-tag">Desktop Widget</p>
+        <p data-lang="fr" class="project-tag">Widget de Bureau</p>
         <h2 class="project-title">
-            Phone <em>&</em>
+            Phone
             <br>
-            Bridge
+            <em>Bridge</em>
         </h2>
         <p data-lang="en" class="project-desc">
             A Quickshell widget that mirrors Android battery level and notifications
             directly onto a Linux desktop over Bluetooth. no internet, no cables.
         </p>
+        <p data-lang="fr" class="project-desc">
+            Un widget Quickshell qui reproduit le niveau de batterie et les notifications
+            Android directement sur un bureau Linux via Bluetooth. Sans Internet, sans câbles.
+        </p>
         <div class="tech-stack">
             <span class="tech-pill">Quickshell</span>
             <span class="tech-pill">Go</span>
             <span class="tech-pill">Android Studio</span>
+            <span class="tech-pill">Kotlin</span>
             <span class="tech-pill">Bluetooth</span>
             <span class="tech-pill">Linux</span>
         </div>
@@ -222,15 +239,26 @@
 <section class="project-section" data-num="03" data-index="2">
     <div class="project-content">
         <p data-lang="en" class="project-tag">Simulation</p>
-        <h2 class="project-title">
+        <p data-lang="fr" class="project-tag">Simulation</p>
+        <h2 data-lang="en" class="project-title">
             Game
             <br>
             <em>of Life</em>
         </h2>
-        <p class="project-desc">
+        <h2 data-lang="fr" class="project-title">
+            Jeu
+            <br>
+            <em>de la vie</em>
+        </h2>
+        <p data-lang="en" class="project-desc">
             An implementation of Conway's Game of Life built in C++ with SDL2.
             A zero-player cellular automaton rendered in real time with interactive
             cell toggling and simulation controls.
+        </p>
+        <p data-lang="fr" class="project-desc">
+            Une implémentation du jeu de la vie de Conway développée en C++ avec SDL2.
+            Un automate cellulaire sans joueur, rendu en temps réel, avec activation
+            interactive des cellules et contrôles de simulation.
         </p>
         <div class="tech-stack">
             <span class="tech-pill">C++</span>
@@ -319,22 +347,25 @@
             </div>
             <div class="pcard-dots" id="pcard-dots"></div>
         </section>
-        <div class="project-links">
-            <a href="#" class="btn btn-primary">Live Demo <span class="arrow">↗</span></a>
-            <a href="#" class="btn btn-ghost">GitHub <span class="arrow">↗</span></a>
-        </div>
     </div>
 </section>
 <!-- PROJECT 4 -->
 <section class="project-section" data-num="04" data-index="3">
     <div class="project-content">
         <p data-lang="en" class="project-tag">Computer Vision/Image Processing</p>
-        <h2 class="project-title">
+        <p data-lang="fr" class="project-tag">Vision par ordinateur / Traitement d’images</p>
+        <h2 data-lang="en" class="project-title">
             ASCII
             <br>
             <em>Filter</em>
         </h2>
-        <p class="project-desc">ascii filter for images, video or webcam</p>
+        <h2 data-lang="fr" class="project-title">
+            Filtre
+            <br>
+            <em>ASCII</em>
+        </h2>
+        <p data-lang="en" class="project-desc">ascii filter for images, video or webcam</p>
+        <p data-lang="fr" class="project-desc">Un filtre ASCII pour images, vidéos ou webcam</p>
         <div class="tech-stack">
             <span class="tech-pill">C++</span>
             <span class="tech-pill">OpenCV</span>
@@ -361,15 +392,20 @@
 <section class="project-section" data-num="05" data-index="4">
     <div class="project-content">
         <p data-lang="en" class="project-tag">Automation</p>
+        <p data-lang="fr" class="project-tag">Automatisation</p>
         <h2 class="project-title">
             Instagram
             <br>
             <em>Rotator</em>
         </h2>
-        <p class="project-desc">
+        <p data-lang="en" class="project-desc">
             A Python script that automatically rotates your Instagram profile picture
-            at a set time interval — no manual uploads, just drop in your images and
+            at a set time interval - no manual uploads, just drop in your images and
             let it run.
+        </p>
+        <p data-lang="fr" class="project-desc">
+            Un script Python qui fait automatiquement tourner votre photo de profil Instagram à intervalles réguliers
+            - aucun téléversement manuel, il suffit d’ajouter vos images et de le laisser s’exécuter.
         </p>
         <div class="tech-stack">
             <span class="tech-pill">Python</span>
@@ -385,15 +421,17 @@
 <!-- PROJECT 6 -->
 <section class="project-section" data-num="06" data-index="5">
     <div class="project-content">
-        <p class="project-tag">Your next project</p>
+        <p data-lang="en" class="project-tag">My next project</p>
+        <p data-lang="fr" class="project-tag">Mon prochain projet</p>
         <h2 class="project-title">
             Coming
             <br>
             <em>Soon</em>
         </h2>
-        <p class="project-desc">
-            Something new is in the works. Check back soon or follow along on
-            GitHub to see what's being built next.
+        <p data-lang="en" class="project-desc">Something new is in the works. Check back soon or follow along on GitHub to see what's being built next.</p>
+        <p data-lang="fr" class="project-desc">
+            Quelque chose de nouveau est en préparation.
+            Revenez bientôt ou suivez-nous sur GitHub pour voir ce qui est en train d’être développé
         </p>
         <div class="tech-stack">
             <span class="tech-pill">???</span>

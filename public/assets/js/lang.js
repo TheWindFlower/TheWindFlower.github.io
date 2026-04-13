@@ -1,3 +1,5 @@
+import { drawConsole } from "./console.js";
+
 const STORAGE_KEY = "preferred-lang";
 const DEFAULT_LANG = "en";
 
@@ -21,6 +23,10 @@ function setLang(lang) {
 
     // Remember the choice
     localStorage.setItem(STORAGE_KEY, lang);
+
+    // refresh the text in the console
+    console.clear();
+    drawConsole();
 }
 
 // Button clicks
@@ -31,4 +37,3 @@ buttons.forEach((btn) => {
 // Restore saved preference on load
 const saved = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
 setLang(saved);
-
