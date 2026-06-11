@@ -1,0 +1,194 @@
+:root {
+  --pm-transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.premium-container {
+margin-top: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9; 
+  height: auto; 
+  overflow: hidden;
+  border-radius: clamp(16px, 3vw, 24px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* NATIVE FULLSCREEN OVERRIDES */
+.premium-container:fullscreen {
+  max-width: none !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  aspect-ratio: auto !important; /* Breaks the 16:9 box to fill the screen */
+  border-radius: 0 !important;
+  background: #000;
+}
+
+.premium-track {
+  display: flex;
+  height: 100%;
+  transition: transform var(--pm-transition);
+}
+
+.premium-slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.premium-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.premium-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.premium-content {
+  position: absolute;
+  bottom: 10%;
+  left: 6%;
+  right: 6%;
+  color: white;
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 0.2s;
+}
+
+.premium-slide.premium-active .premium-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premium-content h2 {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  color: #ffffff !important;
+}
+
+.premium-content p {
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
+  font-weight: 300;
+  opacity: 0.8;
+  max-width: 600px;
+  color: #ffffff !important;
+}
+
+/* Fullscreen Button Styles */
+.premium-fullscreen-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  transition: all 0.3s ease;
+}
+
+.premium-fullscreen-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* Toggle icon appearances depending on status */
+.premium-fullscreen-btn .icon-exit { display: none; }
+.premium-container:fullscreen .premium-fullscreen-btn .icon-enter { display: none; }
+.premium-container:fullscreen .premium-fullscreen-btn .icon-exit { display: block; }
+
+/* Navigation Buttons */
+.premium-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  transition: all 0.3s ease;
+}
+
+.premium-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.premium-prev { left: 24px; }
+.premium-next { right: 24px; }
+
+.premium-nav {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 20;
+}
+
+.premium-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.premium-dot.premium-active {
+  background: white;
+  width: 32px; 
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .premium-btn { display: none; }
+  .premium-fullscreen-btn { top: 16px; right: 16px; width: 38px; height: 38px; }
+  .premium-nav { bottom: 4%; gap: 8px; }
+  .premium-dot.premium-active { width: 24px; }
+}
+
+/* Keeps the default browser cursor hidden in fullscreen mode */
+.premium-container:fullscreen,
+.premium-container:fullscreen * {
+  cursor: none !important;
+}
+
+/* Ensures your custom cursor elements maintain a massive z-index while inside the carousel */
+.premium-container:fullscreen #cursor-dot,
+.premium-container:fullscreen #cursor-ring {
+  z-index: 99999 !important;
+  pointer-events: none; /* Prevents the cursor from blocking clicks on buttons */
+}

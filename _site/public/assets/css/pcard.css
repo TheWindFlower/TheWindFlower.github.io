@@ -49,17 +49,21 @@
 .pcard[active] {
     flex-basis: var(--pcard-open);
     transform: translateY(-6px);
-    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
 }
 
 .pcard__bg {
     position: absolute;
     inset: 0;
-    width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.75) saturate(75%);
     transition: filter 0.3s, transform var(--pcard-speed);
+    object-fit: contain !important;
+    /* Forces the entire image to show */
+    object-position: center;
+    /* Keeps the image perfectly centered */
+
+    border-radius: 0.45rem;
 }
 
 .pcard:hover .pcard__bg {
@@ -115,9 +119,13 @@
 
 .pcard__thumb {
     width: 133px;
-    height: 269px;
+    height: auto;
+    /* Overrides the fixed 269px height */
+    aspect-ratio: 1080 / 2424;
+    /* Locks in your exact image dimensions */
+    object-fit: contain;
+    /* Ensures zero cropping or zooming */
     border-radius: 0.45rem;
-    object-fit: cover;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -164,6 +172,7 @@
     transform: scale(1.2);
 }
 
+
 @media (max-width: 767px) {
     #pcard-section {
         --pcard-closed: 100%;
@@ -198,7 +207,7 @@
     }
 
     .pcard[active] {
-        min-height: 300px;
+        min-height: 380px;
         transform: none;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
@@ -230,8 +239,11 @@
     }
 
     .pcard[active] .pcard__thumb {
-        width: 200px;
-        height: 267px;
+        width: 160px;
+        /* Reduced slightly so the 1:2.24 ratio height doesn't overflow mobile screens */
+        height: auto;
+        aspect-ratio: 1080 / 2424;
+        object-fit: contain;
         border-radius: 0.35rem;
         margin-bottom: 1rem;
     }
@@ -264,4 +276,6 @@
         height: 2rem;
         font-size: 1.2rem;
     }
+
+
 }

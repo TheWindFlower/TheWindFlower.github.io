@@ -80,3 +80,14 @@ margin-top: 20px;
   width: 24px;
   border-radius: 4px;
 }
+
+#mxrn-gif-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  pointer-events: none;
+}
