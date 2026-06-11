@@ -82,17 +82,16 @@
       </h1>
     </div>
     <div class="resume-header-right">
-      <a href="/public/assets/docs/resume.pdf" download class="btn-download">
+      <a data-lang="en" href="/public/assets/docs/resume-en" download class="btn-download">
         <span data-lang="en">Download PDF</span>
         <span data-lang="fr">Télécharger PDF</span>
         <span class="btn-arrow">↓</span>
       </a>
     </div>
   </div>
-
-  <div class="resume-viewer">
+  <div data-lang="en" class="resume-viewer">
     <iframe
-      src="/public/assets/docs/resume.pdf"
+      src="/public/assets/docs/resume_en.pdf"
       type="application/pdf"
       width="100%"
       height="100%"
@@ -102,9 +101,26 @@
     <!-- Fallback if browser can't display PDF -->
     <div class="resume-fallback">
       <p data-lang="en">Your browser can't display PDFs inline.</p>
-      <p data-lang="fr">Votre navigateur ne peut pas afficher le PDF.</p>
-      <a href="/public/assets/docs/resume.pdf" download class="btn-download">
+      <a href="/public/assets/docs/resume_en.pdf" download class="btn-download">
         <span data-lang="en">Download PDF instead</span>
+        <span class="btn-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <div data-lang="fr" class="resume-viewer">
+    <iframe
+      src="/public/assets/docs/resume_fr.pdf"
+      type="application/pdf"
+      width="100%"
+      height="100%"
+      title="Resume PDF">
+    </iframe>
+
+    <!-- Fallback if browser can't display PDF -->
+    <div class="resume-fallback">
+      <p data-lang="fr">Votre navigateur ne peut pas afficher le PDF.</p>
+      <a href="/public/assets/docs/resume_en.pdf" download class="btn-download">
         <span data-lang="fr">Télécharger le PDF</span>
         <span class="btn-arrow">↓</span>
       </a>
