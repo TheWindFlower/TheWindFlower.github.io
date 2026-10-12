@@ -43,10 +43,10 @@ export function drawConsole() {
     console.log("%c}", DIM);
 
     window.hello = () => {
-        console.log("%cname     → YOUR NAME", GREEN);
-        console.log("%crole     → full-stack developer", GREEN);
-        console.log("%clocation → Montreal, QC", GREEN);
-        console.log("%cgithub   → github.com/yourhandle", CYAN);
+        console.log("%cname     → Camille Petrou", GREEN);
+        console.log("%crole     → full-stack developer/cybersecurity", GREEN);
+        console.log("%clocation → Quebec, QC", GREEN);
+        console.log("%cgithub   → github.com/TheWindFlower", CYAN);
     };
 
     window.stack = () => {
@@ -58,7 +58,7 @@ export function drawConsole() {
     window.hire = () => {
         console.log("%c[ AVAILABLE FOR WORK ]", GREEN);
         console.log("%copen to: freelance / full-time / contracts", RESET);
-        console.log("%c→ hello@youremail.com", CYAN);
+        console.log("%c→ camille.petrou@gmail.com", CYAN);
     };
 
     window.secret = () => {

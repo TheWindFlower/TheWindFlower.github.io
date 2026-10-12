@@ -73,61 +73,192 @@
             
 <div class="resume-wrapper">
 
+  <!-- HEADER -->
   <div class="resume-header">
+
     <div class="resume-header-left">
-      <p class="resume-label" >Curriculum Vitae</p>
+      <p class="resume-label">Curriculum Vitae</p>
+
       <h1 class="resume-title">
         <span data-lang="en">My<br><em>Resume</em></span>
         <span data-lang="fr">Mon<br><em>CV</em></span>
       </h1>
     </div>
+
+    <!-- DOWNLOAD MENU -->
     <div class="resume-header-right">
-      <a data-lang="en" href="/public/assets/docs/resume_en.pdf" download class="btn-download">
-        <span data-lang="en">Download PDF</span>
-        <span data-lang="fr">Télécharger PDF</span>
-        <span class="btn-arrow">↓</span>
-      </a>
+      <div class="resume-download">
+
+        <button
+          type="button"
+          class="btn-download"
+          id="resume-download-toggle"
+          aria-expanded="false"
+          aria-controls="resume-download-menu"
+        >
+          <span data-lang="en">Download CV</span>
+          <span data-lang="fr">Télécharger le CV</span>
+          <span class="btn-arrow" aria-hidden="true">↓</span>
+        </button>
+
+        <div
+          class="resume-download-menu"
+          id="resume-download-menu"
+          hidden
+        >
+
+          <p class="download-menu-label" data-lang="en">
+            Choose your format
+          </p>
+
+          <p class="download-menu-label" data-lang="fr">
+            Choisissez un format
+          </p>
+
+          <!-- ENGLISH PDF -->
+          <a
+            href="/public/assets/docs/Camille_Petrou_CV_En.pdf"
+            download
+            data-lang="en"
+          >
+            <span>PDF</span>
+            <span class="file-description">English</span>
+          </a>
+
+          <!-- ENGLISH DOCX -->
+          <a
+            href="/public/assets/docs/Camille_Petrou_CV_En.docx"
+            download
+            data-lang="en"
+          >
+            <span>DOCX</span>
+            <span class="file-description">English · Editable</span>
+          </a>
+
+          <!-- FRENCH PDF -->
+          <a
+            href="/public/assets/docs/Camille_Petrou_CV_Francais.pdf"
+            download
+            data-lang="fr"
+          >
+            <span>PDF</span>
+            <span class="file-description">Français</span>
+          </a>
+
+          <!-- FRENCH DOCX -->
+          <a
+            href="/public/assets/docs/Camille_Petrou_CV_Francais.docx"
+            download
+            data-lang="fr"
+          >
+            <span>DOCX</span>
+            <span class="file-description">Français · Modifiable</span>
+          </a>
+
+        </div>
+      </div>
     </div>
+
   </div>
+
+  <!-- ENGLISH PDF VIEWER -->
   <div data-lang="en" class="resume-viewer">
+
     <iframe
-      src="/public/assets/docs/resume_en.pdf"
+      src="/public/assets/docs/Camille_Petrou_CV_En.pdf"
       type="application/pdf"
       width="100%"
       height="100%"
-      title="Resume PDF">
-    </iframe>
+      title="English Resume PDF"
+    ></iframe>
 
-    <!-- Fallback if browser can't display PDF -->
     <div class="resume-fallback">
-      <p data-lang="en">Your browser can't display PDFs inline.</p>
-      <a href="/public/assets/docs/resume_en.pdf" download class="btn-download">
-        <span data-lang="en">Download PDF instead</span>
-        <span class="btn-arrow">↓</span>
+      <p>Your browser can't display PDFs inline.</p>
+
+      <a
+        href="/public/assets/docs/Camille_Petrou_CV_En.pdf"
+        download
+        class="btn-download"
+      >
+        <span>Download PDF instead</span>
+        <span class="btn-arrow" aria-hidden="true">↓</span>
       </a>
     </div>
+
   </div>
 
+  <!-- FRENCH PDF VIEWER -->
   <div data-lang="fr" class="resume-viewer">
+
     <iframe
-      src="/public/assets/docs/resume_fr.pdf"
+      src="/public/assets/docs/Camille_Petrou_CV_Francais.pdf"
       type="application/pdf"
       width="100%"
       height="100%"
-      title="Resume PDF">
-    </iframe>
+      title="CV français PDF"
+    ></iframe>
 
-    <!-- Fallback if browser can't display PDF -->
     <div class="resume-fallback">
-      <p data-lang="fr">Votre navigateur ne peut pas afficher le PDF.</p>
-      <a href="/public/assets/docs/resume_en.pdf" download class="btn-download">
-        <span data-lang="fr">Télécharger le PDF</span>
-        <span class="btn-arrow">↓</span>
+      <p>Votre navigateur ne peut pas afficher le PDF.</p>
+
+      <a
+        href="/public/assets/docs/Camille_Petrou_CV_Francais.pdf"
+        download
+        class="btn-download"
+      >
+        <span>Télécharger le PDF</span>
+        <span class="btn-arrow" aria-hidden="true">↓</span>
       </a>
     </div>
+
   </div>
 
 </div>
+
+<!-- DOWNLOAD MENU INTERACTIONS -->
+<script>
+  const downloadToggle = document.getElementById(
+    "resume-download-toggle"
+  );
+
+  const downloadMenu = document.getElementById(
+    "resume-download-menu"
+  );
+
+  if (downloadToggle && downloadMenu) {
+    // Toggle the menu.
+    downloadToggle.addEventListener("click", () => {
+      const isOpen =
+        downloadToggle.getAttribute("aria-expanded") === "true";
+
+      downloadToggle.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+
+      downloadMenu.hidden = isOpen;
+    });
+
+    // Close when clicking outside.
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".resume-download")) {
+        downloadMenu.hidden = true;
+        downloadToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Close with Escape.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !downloadMenu.hidden) {
+        downloadMenu.hidden = true;
+
+        downloadToggle.setAttribute("aria-expanded", "false");
+        downloadToggle.focus();
+      }
+    });
+  }
+</script>
+
 
         </main>
         <div class="divider"></div>

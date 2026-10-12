@@ -55,6 +55,7 @@
 [data-lang].visible.profile-label, 
 [data-lang].visible.contact-label,
 [data-lang].visible.project-tag
+[data-lang].visible.file-description
 {
     display: flex;
 }
