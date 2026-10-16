@@ -21,6 +21,7 @@ export function drawConsole() {
             commands: "available commands",
             secret: "you found the easter egg.\nmost people never look here.\nyou're not most people.",
             cookie: "here's a cookie: 🍪",
+            close: "now close DevTools and go look at my projects.",
         },
         fr: {
             greeting: "tu as ouvert les DevTools. curieux. j'aime ça.",
@@ -28,14 +29,17 @@ export function drawConsole() {
             commands: "commandes disponibles",
             secret: "tu as trouvé l'easter egg.\nla plupart des gens ne regardent jamais ici.\ntoi, si.",
             cookie: "voici un cookie : 🍪",
+            close: "maintenant ferme les DevTools et va voir mes projets.",
         },
     };
-    let lang = document.documentElement.lang;
+    // read the language at call time so it follows the EN/FR switch
+    const t = () => messages[document.documentElement.lang] || messages.en;
+
     console.log("%c" + ASCII, GREEN);
-    console.log("%c" + messages[lang].greeting, DIM);
-    console.log("%c" + messages[lang].welcome, RESET);
+    console.log("%c" + t().greeting, DIM);
+    console.log("%c" + t().welcome, RESET);
     console.log(" ");
-    console.log("%c" + messages[lang].commands + "%c {", CYAN, DIM);
+    console.log("%c" + t().commands + "%c {", CYAN, DIM);
     console.log("%c  hello()   %c→ about me", YELLOW, DIM);
     console.log("%c  stack()   %c→ tech stack", YELLOW, DIM);
     console.log("%c  hire()    %c→ open to work", YELLOW, DIM);
@@ -62,15 +66,11 @@ export function drawConsole() {
     };
 
     window.secret = () => {
-        console.log(
-            "%cACCESS GRANTED",
-            "color: #ff5f57; font-size: 18px; font-weight: bold;",
-        );
-        console.log(
-            "%cyou found the easter egg.\nmost people never look here.\nyou're not most people.",
-            DIM,
-        );
-        console.log("%chere's a cookie: 🍪", YELLOW);
-        console.log("%cnow close DevTools and go look at my projects.", DIM);
+        console.log("%cACCESS GRANTED", "color: #ff5f57; font-size: 18px; font-weight: bold;");
+        console.log("%c" + t().secret, DIM);
+        console.log("%c" + t().cookie, YELLOW);
+        console.log("%c" + t().close, DIM);
     };
 }
+
+drawConsole();
