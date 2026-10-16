@@ -56,7 +56,16 @@
             "neovim",
             "Ollama"
         ],
-        "imgs": [],
+        "imgs": [
+            [
+                "explain.gif",
+                "explain code"
+            ],
+            [
+                "inline.png",
+                "inline add"
+            ]
+        ],
         "links": [
             [
                 "GitHub",
@@ -78,7 +87,24 @@
             "SQLite",
             "fl_chart"
         ],
-        "imgs": [],
+        "imgs": [
+            [
+                "flutter1z.png",
+                "bodyweight graph"
+            ],
+            [
+                "flutter2z.png",
+                "exercices page"
+            ],
+            [
+                "flutter3z.png",
+                "quick exercices logs"
+            ],
+            [
+                "flutter4z.png",
+                "workout page"
+            ]
+        ],
         "links": []
     },
     {
@@ -114,7 +140,16 @@
             "C++",
             "OpenCV"
         ],
-        "imgs": [],
+        "imgs": [
+            [
+                "ascii.gif",
+                "live webcam"
+            ],
+            [
+                "ascii2.png",
+                "high quality"
+            ]
+        ],
         "links": [
             [
                 "GitHub",
