@@ -1,55 +1,420 @@
-:root{--bg:#1a1b26;--bg2:#16161e;--fg:#c0caf5;--dim:#565f89;--line:#3b4261;--blue:#7aa2f7;--green:#9ece6a;--yellow:#e0af68;--purple:#bb9af7;--cyan:#7dcfff;--red:#f7768e;--lh:1.6rem}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;background:var(--bg2);color:var(--fg);font:15px/var(--lh) "JetBrains Mono","Fira Code",ui-monospace,Menlo,Consolas,monospace}
-html[data-l=en] [data-lang=fr],html[data-l=fr] [data-lang=en]{display:none}
-a{color:var(--blue);text-decoration:none}a:hover,a:focus-visible{background:var(--blue);color:var(--bg);outline:0}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
-.nvim{height:100vh;height:100dvh;display:flex;flex-direction:column}
-.tabline{display:flex;background:var(--bg2);overflow-x:auto;white-space:nowrap;flex:none}
-.tab{padding:0 1.1rem;color:var(--dim);background:var(--bg2)}
-.tab .bn{color:var(--line)}
-.tab.active{background:var(--bg);color:var(--fg);box-shadow:inset 0 2px var(--blue)}
-.tab:hover{background:var(--line);color:var(--fg)}
-.body{flex:1;display:flex;min-height:0}
-.tree{width:210px;flex:none;padding:.5rem 0;border-right:1px solid var(--line);background:var(--bg2);display:flex;flex-direction:column}
-.tree a{padding:0 1rem;color:var(--fg)}.tree a.active{background:var(--line);color:var(--yellow)}
-.tree-h{padding:0 1rem;color:var(--purple)}.tree-h.hint{margin-top:auto;color:var(--dim)}
-.win{flex:1;display:flex;min-width:0;background:var(--bg);overflow-y:auto;scroll-behavior:smooth}
-.gutter{flex:none;width:3.6rem;text-align:right;padding-right:1rem;color:var(--dim);user-select:none;white-space:pre;overflow:hidden}
-.gutter .cur{color:var(--yellow)}
-.buf{flex:1;min-width:0;max-width:92ch;padding:0 1.5rem 3rem 0}
-.c{color:var(--dim);margin:0}
-p{margin:0 0 var(--lh)}
-.h1{color:var(--red);font-size:1em;margin:0 0 var(--lh);font-weight:700}
-.ascii{color:var(--blue);margin:var(--lh) 0;line-height:1.15;font-size:clamp(9px,2.6vw,15px)}
-.menu{list-style:none;margin:var(--lh) 0;padding:0}
-.menu a,.menu button{display:inline-block;color:var(--fg)}
-.menu a:hover,.menu button:hover{background:var(--line);color:var(--fg)}
-kbd{font:inherit;color:var(--yellow);display:inline-block;min-width:2.5ch}
-.term{margin:var(--lh) 0;color:var(--fg)}.g{color:var(--green)}
-.caret{animation:b 1s steps(1) infinite;color:var(--fg)}@keyframes b{50%{opacity:0}}
-.float{position:relative;border:1px solid var(--blue);border-radius:6px;padding:var(--lh) 1.2rem 0;margin:calc(var(--lh)*1.5) 0 var(--lh);background:var(--bg)}
-.float:first-child{margin-top:var(--lh)}
-.ft{position:absolute;top:calc(var(--lh)/-2);left:1rem;margin:0;padding:0 .5rem;background:var(--bg);color:var(--blue);font-size:1em;font-weight:400;line-height:var(--lh)}
-.stack{color:var(--fg)}.s{color:var(--green)}.k{color:var(--purple)}
-.links a{margin-right:1ch}
-.code{margin:0 0 var(--lh);white-space:pre-wrap;color:var(--fg)}
-.slides{margin:0 0 var(--lh)}
-[hidden]{display:none!important}
-.slides img{display:block;max-width:100%;max-height:340px;border:1px solid var(--line);border-radius:4px}
-.slides figcaption{color:var(--dim)}.slides button{color:var(--yellow)}.slides button:hover{background:var(--line)}
-.viewer iframe{width:100%;height:70vh;border:1px solid var(--line);background:#fff;margin-bottom:var(--lh)}
-.statusline{display:flex;gap:0;flex:none;background:var(--line);align-items:stretch;white-space:nowrap;overflow:hidden}
-.statusline>*{padding:0 .9rem}
-.mode{background:var(--blue);color:var(--bg);font-weight:700}
-.statusline.ins .mode{background:var(--green)}
-.sfile{background:var(--bg);color:var(--fg)}
-.grow{flex:1;padding:0}
-.lang{background:var(--purple);color:var(--bg);font-weight:700}.lang:hover{background:var(--yellow)}
-.pos{background:var(--blue);color:var(--bg)}
-.cmd{height:var(--lh);flex:none;background:var(--bg2);display:flex;padding:0 .5rem;color:var(--fg)}
-.cmd input{flex:1;background:none;border:0;color:inherit;font:inherit;outline:0;display:none;caret-color:var(--fg)}
-.cmd.on input{display:block}.cmd.on #cmdtxt{display:none}
-.cmd.on::before{content:":";color:var(--yellow)}
-@media (max-width:760px){.tree{display:none}.gutter{width:2.4rem;padding-right:.5rem}.buf{padding-right:.8rem}.sinfo{display:none}}
-@media (prefers-reduced-motion:reduce){.caret{animation:none}.win{scroll-behavior:auto}}
+:root {
+    --bg: #1a1b26;
+    --bg2: #16161e;
+    --fg: #c0caf5;
+    --dim: #565f89;
+    --line: #3b4261;
+    --blue: #7aa2f7;
+    --green: #9ece6a;
+    --yellow: #e0af68;
+    --purple: #bb9af7;
+    --cyan: #7dcfff;
+    --red: #f7768e;
+    --lh: 1.6rem
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg2);
+    color: var(--fg);
+    font: 15px/var(--lh) "JetBrains Mono", "Fira Code", ui-monospace, Menlo, Consolas, monospace
+}
+
+html[data-l=en] [data-lang=fr],
+html[data-l=fr] [data-lang=en] {
+    display: none
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none
+}
+
+a:hover,
+a:focus-visible {
+    background: var(--blue);
+    color: var(--bg);
+    outline: 0
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0
+}
+
+.nvim {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column
+}
+
+.tabline {
+    display: flex;
+    background: var(--bg2);
+    overflow-x: auto;
+    white-space: nowrap;
+    flex: none
+}
+
+.tab {
+    padding: 0 1.1rem;
+    color: var(--dim);
+    background: var(--bg2)
+}
+
+.tab .bn {
+    color: var(--line)
+}
+
+.tab.active {
+    background: var(--bg);
+    color: var(--fg);
+    box-shadow: inset 0 2px var(--blue)
+}
+
+.tab:hover {
+    background: var(--line);
+    color: var(--fg)
+}
+
+.body {
+    flex: 1;
+    display: flex;
+    min-height: 0
+}
+
+.tree {
+    width: 210px;
+    flex: none;
+    padding: .5rem 0;
+    border-right: 1px solid var(--line);
+    background: var(--bg2);
+    display: flex;
+    flex-direction: column
+}
+
+.tree a {
+    padding: 0 1rem;
+    color: var(--fg)
+}
+
+.tree a.active {
+    background: var(--line);
+    color: var(--yellow)
+}
+
+.tree-h {
+    padding: 0 1rem;
+    color: var(--purple)
+}
+
+.tree-h.hint {
+    margin-top: auto;
+    color: var(--dim)
+}
+
+.win {
+    flex: 1;
+    display: flex;
+    min-width: 0;
+    background: var(--bg);
+    overflow-y: auto;
+    scroll-behavior: smooth
+}
+
+.gutter {
+    flex: none;
+    align-self: flex-start;
+    width: 3.6rem;
+    text-align: right;
+    padding-right: 1rem;
+    color: var(--dim);
+    user-select: none;
+    white-space: pre;
+    overflow: hidden
+}
+
+.gutter .cur {
+    color: var(--yellow)
+}
+
+.buf {
+    flex: 1;
+    min-width: 0;
+    max-width: 92ch;
+    padding: 0 1.5rem 3rem 0
+}
+
+.c {
+    color: var(--dim);
+    margin: 0
+}
+
+p {
+    margin: 0 0 var(--lh)
+}
+
+.h1 {
+    color: var(--red);
+    font-size: 1em;
+    margin: 0 0 var(--lh);
+    font-weight: 700
+}
+
+.ascii {
+    color: var(--blue);
+    margin: var(--lh) 0;
+    line-height: 1.15;
+    font-size: clamp(9px, 2.6vw, 15px)
+}
+
+.menu {
+    list-style: none;
+    margin: var(--lh) 0;
+    padding: 0
+}
+
+.menu a,
+.menu button {
+    display: inline-block;
+    color: var(--fg)
+}
+
+.menu a:hover,
+.menu button:hover {
+    background: var(--line);
+    color: var(--fg)
+}
+
+kbd {
+    font: inherit;
+    color: var(--yellow);
+    display: inline-block;
+    min-width: 2.5ch
+}
+
+.term {
+    margin: var(--lh) 0;
+    color: var(--fg)
+}
+
+.g {
+    color: var(--green)
+}
+
+.caret {
+    animation: b 1s steps(1) infinite;
+    color: var(--fg)
+}
+
+@keyframes b {
+    50% {
+        opacity: 0
+    }
+}
+
+.float {
+    position: relative;
+    border: 1px solid var(--blue);
+    border-radius: 6px;
+    padding: var(--lh) 1.2rem 0;
+    margin: calc(var(--lh)*1.5) 0 var(--lh);
+    background: var(--bg)
+}
+
+.float:first-child {
+    margin-top: var(--lh)
+}
+
+.ft {
+    position: absolute;
+    top: calc(var(--lh)/-2);
+    left: 1rem;
+    margin: 0;
+    padding: 0 .5rem;
+    background: var(--bg);
+    color: var(--blue);
+    font-size: 1em;
+    font-weight: 400;
+    line-height: var(--lh)
+}
+
+.stack {
+    color: var(--fg)
+}
+
+.s {
+    color: var(--green)
+}
+
+.k {
+    color: var(--purple)
+}
+
+.links a {
+    margin-right: 1ch
+}
+
+.code {
+    margin: 0 0 var(--lh);
+    white-space: pre-wrap;
+    color: var(--fg)
+}
+
+.slides {
+    margin: 0 0 var(--lh)
+}
+
+[hidden] {
+    display: none !important
+}
+
+.slides img {
+    display: block;
+    max-width: 100%;
+    max-height: 340px;
+    border: 1px solid var(--line);
+    border-radius: 4px
+}
+
+.slides figcaption {
+    color: var(--dim)
+}
+
+.slides button {
+    color: var(--yellow)
+}
+
+.slides button:hover {
+    background: var(--line)
+}
+
+.viewer iframe {
+    width: 100%;
+    height: 70vh;
+    border: 1px solid var(--line);
+    background: #fff;
+    margin-bottom: var(--lh)
+}
+
+.statusline {
+    display: flex;
+    gap: 0;
+    flex: none;
+    background: var(--line);
+    align-items: stretch;
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.statusline>* {
+    padding: 0 .9rem
+}
+
+.mode {
+    background: var(--blue);
+    color: var(--bg);
+    font-weight: 700
+}
+
+.statusline.ins .mode {
+    background: var(--green)
+}
+
+.sfile {
+    background: var(--bg);
+    color: var(--fg)
+}
+
+.grow {
+    flex: 1;
+    padding: 0
+}
+
+.lang {
+    background: var(--purple);
+    color: var(--bg);
+    font-weight: 700
+}
+
+.lang:hover {
+    background: var(--yellow)
+}
+
+.pos {
+    background: var(--blue);
+    color: var(--bg)
+}
+
+.cmd {
+    height: var(--lh);
+    flex: none;
+    background: var(--bg2);
+    display: flex;
+    padding: 0 .5rem;
+    color: var(--fg)
+}
+
+.cmd input {
+    flex: 1;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    outline: 0;
+    display: none;
+    caret-color: var(--fg)
+}
+
+.cmd.on input {
+    display: block
+}
+
+.cmd.on #cmdtxt {
+    display: none
+}
+
+.cmd.on::before {
+    content: ":";
+    color: var(--yellow)
+}
+
+@media (max-width:760px) {
+    .tree {
+        display: none
+    }
+
+    .gutter {
+        width: 2.4rem;
+        padding-right: .5rem
+    }
+
+    .buf {
+        padding-right: .8rem
+    }
+
+    .sinfo {
+        display: none
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .caret {
+        animation: none
+    }
+
+    .win {
+        scroll-behavior: auto
+    }
+}

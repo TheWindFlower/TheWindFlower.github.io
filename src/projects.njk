@@ -2,22 +2,38 @@
 layout: base.njk
 title: Projects
 ---
+
 {% for p in projects %}
-<section class="float proj">
-  <h2 class="ft">{{ p.name }}.lua</h2>
-  <p class="c"><span data-lang="en">-- {{ p.tag.en }}</span><span data-lang="fr">-- {{ p.tag.fr }}</span></p>
-  <p data-lang="en">{{ p.en }}</p>
-  <p data-lang="fr">{{ p.fr }}</p>
-  <p class="stack">stack = { {% for s in p.stack %}<span class="s">"{{ s }}"</span>{% if not loop.last %}, {% endif %}{% endfor %} }</p>
-  {% if p.imgs.length %}
-  <figure class="slides" data-slides>
-    {% for i in p.imgs %}<img src="/public/assets/img/{{ i[0] }}" alt="{{ i[1] }}" loading="lazy" data-cap="{{ i[1] }}"{% if not loop.first %} hidden{% endif %}>{% endfor %}
-    <figcaption><button type="button" data-prev aria-label="Previous">&lt;</button> <span data-capt>{{ p.imgs[0][1] }}</span> <button type="button" data-next aria-label="Next">&gt;</button></figcaption>
-  </figure>
-  {% endif %}
-  {% if p.links.length %}<p class="links">{% for l in p.links %}<a href="{{ l[1] }}" target="_blank" rel="noopener">[{{ l[0] }}]</a> {% endfor %}</p>{% endif %}
-</section>
+    <section class="float proj">
+        <h2 class="ft">{{ p.name }}.lua</h2>
+        <p class="c"><span data-lang="en">-- {{ p.tag.en }}</span><span data-lang="fr">-- {{ p.tag.fr }}</span></p>
+        <p data-lang="en">{{ p.en }}</p>
+        <p data-lang="fr">{{ p.fr }}</p>
+        <p class="stack">stack = { {% for s in p.stack %}<span class="s">"{{ s }}"</span>{% if not loop.last %}, {% endif %}{% endfor %} }</p>
+        {% if p.imgs.length %}
+            <figure class="slides" data-slides>
+                {% for i in p.imgs %}
+                    <img src="/public/assets/img/{{ i[0] }}"
+                         alt="{{ i[1] }}"
+                         loading="lazy"
+                         data-cap="{{ i[1] }}"
+                         {% if not loop.first %} hidden{% endif %}>
+                {% endfor %}
+                <figcaption>
+                    <button type="button" data-prev aria-label="Previous">&lt;</button>
+                    <span data-capt>{{ p.imgs[0][1] }}</span>
+                    <button type="button" data-next aria-label="Next">&gt;</button>
+                </figcaption>
+            </figure>
+        {% endif %}
+        {% if p.links.length %}<p class="links">{% for l in p.links %}<a href="{{ l[1] }}"
+   target="_blank"
+   rel="noopener">[{{ l[0] }}]</a> {% endfor %}</p>{% endif %}
+    </section>
 {% endfor %}
-<section class="float"><h2 class="ft">next.lua</h2>
-<p class="c" data-lang="en">-- TODO: something new is in the works</p><p class="c" data-lang="fr">-- TODO : quelque chose de nouveau est en préparation</p>
-<p class="links"><a href="/contact/"><span data-lang="en">[Get in touch]</span><span data-lang="fr">[Me contacter]</span></a></p></section>
+<section class="float">
+    <h2 class="ft">next.lua</h2>
+    <p class="c" data-lang="en">-- TODO: something new is in the works</p>
+    <p class="c" data-lang="fr">-- TODO : quelque chose de nouveau est en préparation</p>
+    <p class="links"><a href="/contact/"><span data-lang="en">[Get in touch]</span><span data-lang="fr">[Me contacter]</span></a></p>
+</section>

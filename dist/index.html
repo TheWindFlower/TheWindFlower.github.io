@@ -1,56 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" data-l="en">
+
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home — Camille Petrou</title>
-<link rel="stylesheet" href="/public/assets/css/nvim.css">
-<link rel="icon" href="/public/assets/img/favicon.svg">
-<script src="/public/assets/js/nvim.js" defer></script>
-<script type="module" src="/public/assets/js/console.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home — Camille Petrou</title>
+    <link rel="stylesheet" href="/public/assets/css/nvim.css">
+    <link rel="icon" href="/public/assets/img/favicon.svg">
+    <script src="/public/assets/js/nvim.js" defer></script>
+    <script type="module" src="/public/assets/js/console.js"></script>
 </head>
+
 <body>
-<div class="nvim">
-  <nav class="tabline" aria-label="Pages">
-    <a href="/" class="tab active"><span class="bn">1</span> home.md</a><a href="/projects/" class="tab"><span class="bn">2</span> projects.lua</a><a href="/profile/" class="tab"><span class="bn">3</span> profile.lua</a><a href="/resume/" class="tab"><span class="bn">4</span> resume.pdf</a><a href="/contact/" class="tab"><span class="bn">5</span> contact.md</a>
-  </nav>
-  <div class="body">
-    <aside class="tree" aria-label="Files">
-      <div class="tree-h">~/portfolio</div>
-      <a href="/" class="active"><span data-lang="en">Home</span><span data-lang="fr">Accueil</span></a><a href="/projects/" class=""><span data-lang="en">My Projects</span><span data-lang="fr">Mes Projets</span></a><a href="/profile/" class=""><span data-lang="en">My Profile</span><span data-lang="fr">Mon Profil</span></a><a href="/resume/" class=""><span data-lang="en">My Resume</span><span data-lang="fr">Mon CV</span></a><a href="/contact/" class=""><span data-lang="en">Contact me</span><span data-lang="fr">Me contacter</span></a>
-      <div class="tree-h hint"><span data-lang="en">:help for commands</span><span data-lang="fr">:help pour les commandes</span></div>
-    </aside>
-    <main class="win">
-      <div class="gutter" aria-hidden="true"></div>
-      <div class="buf" id="buf"><pre class="ascii" aria-label="CAMILLE">  ___   _   __  __ ___ _    _    ___
+    <div class="nvim">
+        <nav class="tabline" aria-label="Pages">
+            <a href="/" class="tab active"><span
+                    class="bn">1</span> home.md</a><a href="/projects/" class="tab"><span
+                    class="bn">2</span> projects.lua</a><a href="/profile/" class="tab"><span
+                    class="bn">3</span> profile.lua</a><a href="/resume/" class="tab"><span
+                    class="bn">4</span> resume.pdf</a><a href="/contact/" class="tab"><span
+                    class="bn">5</span> contact.md</a>
+        </nav>
+        <div class="body">
+            <aside class="tree" aria-label="Files">
+                <div class="tree-h">~/portfolio</div>
+                <a href="/" class="active"><span
+                        data-lang="en">Home</span><span data-lang="fr">Accueil</span></a><a href="/projects/" class=""><span
+                        data-lang="en">My Projects</span><span data-lang="fr">Mes Projets</span></a><a href="/profile/" class=""><span
+                        data-lang="en">My Profile</span><span data-lang="fr">Mon Profil</span></a><a href="/resume/" class=""><span
+                        data-lang="en">My Resume</span><span data-lang="fr">Mon CV</span></a><a href="/contact/" class=""><span
+                        data-lang="en">Contact me</span><span data-lang="fr">Me contacter</span></a>
+                <div class="tree-h hint"><span data-lang="en">:help for commands</span><span data-lang="fr">:help pour
+                        les commandes</span></div>
+            </aside>
+            <main class="win">
+                <div class="gutter" aria-hidden="true"></div>
+                <div class="buf" id="buf"><pre class="ascii" aria-label="CAMILLE">
+  ___   _   __  __ ___ _    _    ___
  / __| /_\ |  \/  |_ _| |  | |  | __|
 | (__ / _ \| |\/| || || |__| |__| _|
  \___/_/ \_\_|  |_|___|____|____|___|
   ___ ___ _____ ___  ___  _   _
  | _ \ __|_   _| _ \/ _ \| | | |
  |  _/ _|  | | |   / (_) | |_| |
- |_| |___| |_| |_|_\\___/ \___/</pre>
+ |_| |___| |_| |_|_\\___/ \___/
+</pre>
 <p class="c" data-lang="en">-- student in computer science, close to the metal</p>
 <p class="c" data-lang="fr">-- étudiant en informatique, proche du métal</p>
 <ul class="menu">
-  <li><a href="/projects/"><kbd>p</kbd> <span data-lang="en">View projects</span><span data-lang="fr">Voir les projets</span></a></li>
-  <li><a href="/profile/"><kbd>a</kbd> <span data-lang="en">About me</span><span data-lang="fr">À propos</span></a></li>
-  <li><a href="/resume/"><kbd>r</kbd> <span data-lang="en">Open resume</span><span data-lang="fr">Ouvrir le CV</span></a></li>
-  <li><a href="/contact/"><kbd>c</kbd> <span data-lang="en">Contact me</span><span data-lang="fr">Me contacter</span></a></li>
-  <li><button type="button" data-act="lang"><kbd>L</kbd> <span data-lang="en">Switch to French</span><span data-lang="fr">Passer en anglais</span></button></li>
+    <li><a href="/projects/"><kbd>p</kbd> <span data-lang="en">View projects</span><span data-lang="fr">Voir les
+                projets</span></a></li>
+    <li><a href="/profile/"><kbd>a</kbd> <span data-lang="en">About me</span><span data-lang="fr">À propos</span></a>
+    </li>
+    <li><a href="/resume/"><kbd>r</kbd> <span data-lang="en">Open resume</span><span data-lang="fr">Ouvrir le
+                CV</span></a></li>
+    <li><a href="/contact/"><kbd>c</kbd> <span data-lang="en">Contact me</span><span data-lang="fr">Me
+                contacter</span></a></li>
+    <li><button type="button" data-act="lang"><kbd>L</kbd> <span data-lang="en">Switch to French</span><span
+                data-lang="fr">Passer en anglais</span></button></li>
 </ul>
-<pre class="term"><span class="g">camille@portfolio</span> ~ $ <span id="typed"></span><span class="caret">▋</span></pre>
+<pre class="term"><span class="g">rflower</span> ~ $ <span id="typed"></span><span class="caret">▋</span>
+</pre>
 </div>
-    </main>
-  </div>
-  <footer class="statusline">
-    <span class="mode">NORMAL</span>
-    <span class="sfile">home.md</span>
-    <span class="grow"></span>
-    <span class="sinfo">La Pocatière, QC</span>
-    <button class="lang" id="lang" title="L"><span data-lang="en">EN</span><span data-lang="fr">FR</span></button>
-    <span class="pos" id="pos">1:1</span>
-  </footer>
-  <div class="cmd" id="cmd"><span id="cmdtxt">&nbsp;</span><input id="cmdin" autocomplete="off" spellcheck="false" aria-label="command line"></div>
-</div>
+            </main>
+        </div>
+        <footer class="statusline">
+            <span class="mode">NORMAL</span>
+            <span class="sfile">home.md</span>
+            <span class="grow"></span>
+            <span class="sinfo">La Pocatière, QC</span>
+            <button class="lang" id="lang" title="L"><span data-lang="en">EN</span><span
+                    data-lang="fr">FR</span></button>
+            <span class="pos" id="pos">1:1</span>
+        </footer>
+        <div class="cmd" id="cmd"><span id="cmdtxt">&nbsp;</span><input id="cmdin" autocomplete="off" spellcheck="false"
+                aria-label="command line"></div>
+    </div>
 </body>
+
 </html>
