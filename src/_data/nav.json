@@ -1,0 +1,7 @@
+[
+ {"url":"/","file":"home.md","en":"Home","fr":"Accueil"},
+ {"url":"/projects/","file":"projects.lua","en":"My Projects","fr":"Mes Projets"},
+ {"url":"/profile/","file":"profile.lua","en":"My Profile","fr":"Mon Profil"},
+ {"url":"/resume/","file":"resume.pdf","en":"My Resume","fr":"Mon CV"},
+ {"url":"/contact/","file":"contact.md","en":"Contact me","fr":"Me contacter"}
+]

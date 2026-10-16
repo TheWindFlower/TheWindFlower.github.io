@@ -1,11 +1,4 @@
-module.exports = function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("public");
-
-    return {
-        dir: {
-            input: "src",
-            output: "_site",
-            includes: "_includes",
-        },
-    };
+module.exports = function (c) {
+  c.addPassthroughCopy("public");
+  return { dir: { input: "src", output: "dist", includes: "_includes", data: "_data" } };
 };

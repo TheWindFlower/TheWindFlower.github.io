@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-l="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — Camille Petrou</title>
+<link rel="stylesheet" href="/public/assets/css/nvim.css">
+<link rel="icon" href="/public/assets/img/favicon.svg">
+<script src="/public/assets/js/nvim.js" defer></script>
+<script type="module" src="/public/assets/js/console.js"></script>
+</head>
+<body>
+<div class="nvim">
+  <nav class="tabline" aria-label="Pages">
+    {% for n in nav %}<a href="{{ n.url }}" class="tab{% if page.url == n.url %} active{% endif %}"><span class="bn">{{ loop.index }}</span> {{ n.file }}</a>{% endfor %}
+  </nav>
+  <div class="body">
+    <aside class="tree" aria-label="Files">
+      <div class="tree-h">~/portfolio</div>
+      {% for n in nav %}<a href="{{ n.url }}" class="{% if page.url == n.url %}active{% endif %}"><span data-lang="en">{{ n.en }}</span><span data-lang="fr">{{ n.fr }}</span></a>{% endfor %}
+      <div class="tree-h hint"><span data-lang="en">:help for commands</span><span data-lang="fr">:help pour les commandes</span></div>
+    </aside>
+    <main class="win">
+      <div class="gutter" aria-hidden="true"></div>
+      <div class="buf" id="buf">{{ content | safe }}</div>
+    </main>
+  </div>
+  <footer class="statusline">
+    <span class="mode">NORMAL</span>
+    <span class="sfile">{% for n in nav %}{% if page.url == n.url %}{{ n.file }}{% endif %}{% endfor %}</span>
+    <span class="grow"></span>
+    <span class="sinfo">La Pocatière, QC</span>
+    <button class="lang" id="lang" title="L"><span data-lang="en">EN</span><span data-lang="fr">FR</span></button>
+    <span class="pos" id="pos">1:1</span>
+  </footer>
+  <div class="cmd" id="cmd"><span id="cmdtxt">&nbsp;</span><input id="cmdin" autocomplete="off" spellcheck="false" aria-label="command line"></div>
+</div>
+</body>
+</html>

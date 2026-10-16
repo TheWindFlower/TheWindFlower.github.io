@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-l="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Camille Petrou</title>
+<link rel="stylesheet" href="/public/assets/css/nvim.css">
+<link rel="icon" href="/public/assets/img/favicon.svg">
+<script src="/public/assets/js/nvim.js" defer></script>
+<script type="module" src="/public/assets/js/console.js"></script>
+</head>
+<body>
+<div class="nvim">
+  <nav class="tabline" aria-label="Pages">
+    <a href="/" class="tab"><span class="bn">1</span> home.md</a><a href="/projects/" class="tab active"><span class="bn">2</span> projects.lua</a><a href="/profile/" class="tab"><span class="bn">3</span> profile.lua</a><a href="/resume/" class="tab"><span class="bn">4</span> resume.pdf</a><a href="/contact/" class="tab"><span class="bn">5</span> contact.md</a>
+  </nav>
+  <div class="body">
+    <aside class="tree" aria-label="Files">
+      <div class="tree-h">~/portfolio</div>
+      <a href="/" class=""><span data-lang="en">Home</span><span data-lang="fr">Accueil</span></a><a href="/projects/" class="active"><span data-lang="en">My Projects</span><span data-lang="fr">Mes Projets</span></a><a href="/profile/" class=""><span data-lang="en">My Profile</span><span data-lang="fr">Mon Profil</span></a><a href="/resume/" class=""><span data-lang="en">My Resume</span><span data-lang="fr">Mon CV</span></a><a href="/contact/" class=""><span data-lang="en">Contact me</span><span data-lang="fr">Me contacter</span></a>
+      <div class="tree-h hint"><span data-lang="en">:help for commands</span><span data-lang="fr">:help pour les commandes</span></div>
+    </aside>
+    <main class="win">
+      <div class="gutter" aria-hidden="true"></div>
+      <div class="buf" id="buf">
+<section class="float proj">
+  <h2 class="ft">SkyBlock Quant Terminal.lua</h2>
+  <p class="c"><span data-lang="en">-- Web app</span><span data-lang="fr">-- Application Web</span></p>
+  <p data-lang="en">A web app analyzing Hypixel SkyBlock market data using the official API and scraped crafting recipes to identify optimal profit flips through data processing and arbitrage logic.</p>
+  <p data-lang="fr">Une application web analysant les données du marché de Hypixel SkyBlock via l’API officielle et des recettes de craft scrapées afin d’identifier les meilleurs flips rentables grâce au traitement de données et à des logiques d’arbitrage.</p>
+  <p class="stack">stack = { <span class="s">"Vite"</span>, <span class="s">"Tailwind"</span>, <span class="s">"React"</span>, <span class="s">"Api"</span>, <span class="s">"Data Analysis"</span> }</p>
+  
+  <figure class="slides" data-slides>
+    <img src="/public/assets/img/sky1.png" alt="basic flip interface" loading="lazy" data-cap="basic flip interface"><img src="/public/assets/img/sky2.png" alt="Buy to Npc flip" loading="lazy" data-cap="Buy to Npc flip" hidden><img src="/public/assets/img/sky3.png" alt="Craft to Npc flip" loading="lazy" data-cap="Craft to Npc flip" hidden><img src="/public/assets/img/sky4.png" alt="Shard Fusion Flip" loading="lazy" data-cap="Shard Fusion Flip" hidden>
+    <figcaption><button type="button" data-prev aria-label="Previous">&lt;</button> <span data-capt>basic flip interface</span> <button type="button" data-next aria-label="Next">&gt;</button></figcaption>
+  </figure>
+  
+  <p class="links"><a href="https://github.com/TheWindFlower/SkyBlock-Quant-Terminal" target="_blank" rel="noopener">[GitHub]</a> <a href="https://skyflip.vercel.app/" target="_blank" rel="noopener">[Live]</a> </p>
+</section>
+
+<section class="float proj">
+  <h2 class="ft">LocalLLM.nvim.lua</h2>
+  <p class="c"><span data-lang="en">-- Neovim plugin</span><span data-lang="fr">-- Extension Neovim</span></p>
+  <p data-lang="en">A Neovim plugin that integrates locally hosted LLMs through Ollama to explain, document, refactor, and test code directly within the editor. Streaming responses, inline code generation, customizable interface, inference stays local.</p>
+  <p data-lang="fr">Une extension Neovim qui intègre des modèles de langage locaux via Ollama afin d’expliquer, documenter, refactoriser et tester du code directement dans l’éditeur. Réponses en continu, génération en ligne, interface personnalisable, exécution locale.</p>
+  <p class="stack">stack = { <span class="s">"Lua"</span>, <span class="s">"neovim"</span>, <span class="s">"Ollama"</span> }</p>
+  
+  <p class="links"><a href="https://github.com/TheWindFlower/LocalLLM.nvim" target="_blank" rel="noopener">[GitHub]</a> </p>
+</section>
+
+<section class="float proj">
+  <h2 class="ft">Workout Tracker.lua</h2>
+  <p class="c"><span data-lang="en">-- Mobile app</span><span data-lang="fr">-- Application mobile</span></p>
+  <p data-lang="en">A Flutter fitness app to log sets, reps, and weight for fully custom exercises, with bodyweight tracking and graphs to visualize your progress over time.</p>
+  <p data-lang="fr">Une application de fitness Flutter pour enregistrer séries, répétitions et charges d’exercices entièrement personnalisés, avec suivi du poids corporel et graphiques de progression.</p>
+  <p class="stack">stack = { <span class="s">"Flutter"</span>, <span class="s">"Dart"</span>, <span class="s">"SQLite"</span>, <span class="s">"fl_chart"</span> }</p>
+  
+  
+</section>
+
+<section class="float proj">
+  <h2 class="ft">Game of Life.lua</h2>
+  <p class="c"><span data-lang="en">-- Simulation</span><span data-lang="fr">-- Simulation</span></p>
+  <p data-lang="en">Conway&#39;s Game of Life in C++ with SDL2. A zero-player cellular automaton rendered in real time with interactive cell toggling and simulation controls.</p>
+  <p data-lang="fr">Le jeu de la vie de Conway en C++ avec SDL2. Un automate cellulaire sans joueur, rendu en temps réel, avec activation interactive des cellules et contrôles de simulation.</p>
+  <p class="stack">stack = { <span class="s">"C++"</span>, <span class="s">"SDL2"</span>, <span class="s">"Simulation"</span> }</p>
+  
+  <figure class="slides" data-slides>
+    <img src="/public/assets/img/gol.gif" alt="Game of Life" loading="lazy" data-cap="Game of Life">
+    <figcaption><button type="button" data-prev aria-label="Previous">&lt;</button> <span data-capt>Game of Life</span> <button type="button" data-next aria-label="Next">&gt;</button></figcaption>
+  </figure>
+  
+  
+</section>
+
+<section class="float proj">
+  <h2 class="ft">ASCII Filter.lua</h2>
+  <p class="c"><span data-lang="en">-- Computer vision</span><span data-lang="fr">-- Vision par ordinateur</span></p>
+  <p data-lang="en">An ASCII filter for images, video or webcam.</p>
+  <p data-lang="fr">Un filtre ASCII pour images, vidéos ou webcam.</p>
+  <p class="stack">stack = { <span class="s">"C++"</span>, <span class="s">"OpenCV"</span> }</p>
+  
+  <p class="links"><a href="https://github.com/TheWindFlower/ascii-convertor" target="_blank" rel="noopener">[GitHub]</a> </p>
+</section>
+
+<section class="float proj">
+  <h2 class="ft">Instagram Rotator.lua</h2>
+  <p class="c"><span data-lang="en">-- Automation</span><span data-lang="fr">-- Automatisation</span></p>
+  <p data-lang="en">A Python script that automatically rotates your Instagram profile picture at a set interval. Drop in your images and let it run.</p>
+  <p data-lang="fr">Un script Python qui fait tourner automatiquement votre photo de profil Instagram à intervalles réguliers. Ajoutez vos images et laissez-le tourner.</p>
+  <p class="stack">stack = { <span class="s">"Python"</span>, <span class="s">"Scraping"</span>, <span class="s">"Automation"</span> }</p>
+  
+  <p class="links"><a href="https://github.com/TheWindFlower/Instagram-Profile-Picture-Changer" target="_blank" rel="noopener">[GitHub]</a> </p>
+</section>
+
+<section class="float"><h2 class="ft">next.lua</h2>
+<p class="c" data-lang="en">-- TODO: something new is in the works</p><p class="c" data-lang="fr">-- TODO : quelque chose de nouveau est en préparation</p>
+<p class="links"><a href="/contact/"><span data-lang="en">[Get in touch]</span><span data-lang="fr">[Me contacter]</span></a></p></section>
+</div>
+    </main>
+  </div>
+  <footer class="statusline">
+    <span class="mode">NORMAL</span>
+    <span class="sfile">projects.lua</span>
+    <span class="grow"></span>
+    <span class="sinfo">La Pocatière, QC</span>
+    <button class="lang" id="lang" title="L"><span data-lang="en">EN</span><span data-lang="fr">FR</span></button>
+    <span class="pos" id="pos">1:1</span>
+  </footer>
+  <div class="cmd" id="cmd"><span id="cmdtxt">&nbsp;</span><input id="cmdin" autocomplete="off" spellcheck="false" aria-label="command line"></div>
+</div>
+</body>
+</html>
